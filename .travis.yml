@@ -1,3 +1,7 @@
+# Linux
+os: linux
+dist: xenial
+
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
 
@@ -11,7 +15,7 @@ install:
 
 # Defini o script de Teste que deve rodar toda vez que o código for alterado.
 script:
-  - python -m unittest -v test
+  - python -m unittest -v test || travis_terminate 1;
 
 # Definir o Deploy no Heroku
 deploy:
@@ -19,5 +23,6 @@ deploy:
   api_key: $HEROKU_API_KEY
   edge: true 
   app: devopslab-gabydias
+  strategy: api
   on:
       branch: main
