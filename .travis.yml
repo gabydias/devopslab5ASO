@@ -19,10 +19,21 @@ script:
 
 # Definir o Deploy no Heroku
 deploy:
-  provider: heroku
-  api_key: $HEROKU_API_KEY
-  edge: true 
-  app: devopslab-gabydias
-  strategy: api
-  on:
+  - provider: heroku
+    api_key: $HEROKU_API_KEY
+    edge: true 
+    app: devopslab-gabydias
+    strategy: api
+    on:
       branch: main
+
+  - provider: gae
+    keyfile: ../directed-portal-321511-c2d6ef2ea50d.json
+    project: directed-portal-321511
+    on:
+      branch: main
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_51d2b57c9c95_key -iv $encrypted_51d2b57c9c95_iv
+  -in directed-portal-321511-c2d6ef2ea50d.json.enc -out ~\/directed-portal-321511-c2d6ef2ea50d.json
+  -d
