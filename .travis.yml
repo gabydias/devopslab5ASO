@@ -28,7 +28,7 @@ deploy:
       branch: main
 
   - provider: gae
-    keyfile: ../directed-portal-321511-c2d6ef2ea50d.json
+    keyfile: ../../directed-portal-321511-c2d6ef2ea50d.json
     project: directed-portal-321511
     on:
       branch: main
