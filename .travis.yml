@@ -16,7 +16,7 @@ install:
 # Defini o script de Teste que deve rodar toda vez que o código for alterado.
 script:
   - python -m unittest -v test || travis_terminate 1;
-  - pwd && ls 
+
 # Definir o Deploy no Heroku
 deploy:
   - provider: heroku
@@ -28,12 +28,12 @@ deploy:
       branch: main
 
   - provider: gae
-    keyfile: directed-portal-321511-c2d6ef2ea50d.json
+    keyfile: ../../../directed-portal-321511-c2d6ef2ea50d.json
     project: directed-portal-321511
     on:
       branch: main
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_51d2b57c9c95_key -iv $encrypted_51d2b57c9c95_iv
-  -in directed-portal-321511-c2d6ef2ea50d.json.enc -out directed-portal-321511-c2d6ef2ea50d.json
+  -in directed-portal-321511-c2d6ef2ea50d.json.enc -out ~/directed-portal-321511-c2d6ef2ea50d.json
   -d
