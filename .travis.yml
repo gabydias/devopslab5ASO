@@ -35,5 +35,5 @@ deploy:
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_51d2b57c9c95_key -iv $encrypted_51d2b57c9c95_iv
-  -in directed-portal-321511-c2d6ef2ea50d.json.enc -out ~\/directed-portal-321511-c2d6ef2ea50d.json
+  -in directed-portal-321511-c2d6ef2ea50d.json.enc -out ~/directed-portal-321511-c2d6ef2ea50d.json
   -d
